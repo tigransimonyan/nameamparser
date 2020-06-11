@@ -8923,7 +8923,11 @@ function isArray(x) {
 }
 
 function normalizeValue(str) {
-  return str.replace(/\s/, '').replace(/․/g, '.').toLowerCase();
+  return str
+    .replace(/\s/g, '')
+    .replace(/․/g, '.')
+    .replace(/^\.|\.$/g, '')
+    .toLowerCase();
 }
 
 function getTld(str) {
@@ -8959,7 +8963,7 @@ function getSubdomain(str, domain) {
   if (domain === '') {
     return '';
   }
-  return str.replace(new RegExp('\\.'.concat(domain, '$')), '');
+  return str.replace(new RegExp('\\.?'.concat(domain, '$')), '');
 }
 
 var protos = {
@@ -8993,6 +8997,7 @@ function parse(str) {
   }
 
   var value = normalizeValue(str);
+  console.log(value);
   result.tld = getTld(value);
   result.domain = getDomain(value, result.tld);
   result.subdomain = getSubdomain(value, result.domain);
