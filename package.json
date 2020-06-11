@@ -1,10 +1,10 @@
 {
-  "name": "nameparser",
+  "name": "nameamparser",
   "version": "1.0.0",
   "description": "Domain name parser.",
   "main": "index.js",
   "scripts": {
-    "build": "browserify ./index.js --standalone=nameparser > ./dist/nameparser.js",
+    "build": "browserify ./index.js --standalone=nameamparser > ./dist/nameamparser.js",
     "fetch:list": "node ./tools/fetch-list.js"
   },
   "author": "Tigran Simonyan",
@@ -20,7 +20,5 @@
     "type": "git",
     "url": "git@github.com:tigransimonyan/nameparser.git"
   },
-  "publishConfig": {
-    "registry": "https://github.com/tigransimonyan/nameparser"
-  }
+  "registry": "https://npm.pkg.github.com/tigransimonyan"
 }
