@@ -62,7 +62,7 @@ var protos = {
 };
 
 function parse(input) {
-  var result = new Object(protos);
+  var result = Object.create(protos);
   result.input = input;
   result.tld = '';
   result.sld = '';
