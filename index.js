@@ -81,7 +81,6 @@ function parse(str) {
   }
 
   var value = normalizeValue(str);
-  console.log(value);
   result.tld = getTld(value);
   result.domain = getDomain(value, result.tld);
   result.subdomain = getSubdomain(value, result.domain);
