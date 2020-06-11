@@ -88,6 +88,4 @@ function parse(str) {
   return result;
 }
 
-console.log(parse('111.222.am'));
-
 module.exports = parse;
