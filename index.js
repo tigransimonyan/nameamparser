@@ -84,8 +84,10 @@ function parse(str) {
   result.tld = getTld(value);
   result.domain = getDomain(value, result.tld);
   result.subdomain = getSubdomain(value, result.domain);
-  result.sld = getSld(value, result.domain);
+  result.sld = getSld(result.domain);
   return result;
 }
+
+console.log(parse('111.222.am'));
 
 module.exports = parse;
