@@ -84,4 +84,4 @@ function parse(str) {
   return result;
 }
 
-exports = parse;
+module.exports = parse;
