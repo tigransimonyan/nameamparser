@@ -8918,13 +8918,9 @@ module.exports=[
 
 var suffixes = require('./data/suffix.json');
 
-function isArray(x) {
-  return x && x.constructor.toString().indexOf('Array') > -1;
-}
-
 function normalizeValue(str) {
   return str
-    .replace(/\s/g, '')
+    .replace(/.+\/\/|\/.+|\s/g, '')
     .replace(/․/g, '.')
     .replace(/^\.|\.$/g, '')
     .toLowerCase();
@@ -8979,33 +8975,53 @@ var protos = {
   isDomainOrSubdomain: function () {
     return this.isDomain() || this.isSubdomain();
   },
-  includesTld: function (value) {
-    return isArray(value) ? value.indexOf(this.tld) !== -1 : value === this.tld;
-  },
 };
 
-function parse(str) {
+function parse(input) {
   var result = new Object(protos);
-  result.input = str;
+  result.input = input;
   result.tld = '';
   result.sld = '';
+  result.output = '';
   result.domain = '';
   result.subdomain = '';
 
-  if (typeof str !== 'string') {
+  if (typeof input !== 'string') {
     return result;
   }
 
-  var value = normalizeValue(str);
-  console.log(value);
-  result.tld = getTld(value);
-  result.domain = getDomain(value, result.tld);
-  result.subdomain = getSubdomain(value, result.domain);
-  result.sld = getSld(value, result.domain);
+  result.output = normalizeValue(result.input);
+  result.tld = getTld(result.output);
+  result.domain = getDomain(result.output, result.tld);
+  result.sld = getSld(result.domain);
+  result.subdomain = getSubdomain(result.output, result.domain);
+
   return result;
 }
 
-module.exports = parse;
+function includesTld(input, param) {
+  if (typeof input !== 'string') {
+    return result;
+  }
+
+  var output = normalizeValue(input);
+  var tld = getTld(output);
+
+  if (!param) {
+    return Boolean(tld);
+  }
+  if (param instanceof Array) {
+    if (param.length === 0) {
+      return Boolean(tld);
+    }
+    return param.indexOf(tld) !== -1;
+  }
+  return param === tld;
+}
+
+module.exports.parse = parse;
+module.exports.includesTld = includesTld;
+module.exports.normalizeValue = normalizeValue;
 
 },{"./data/suffix.json":1}]},{},[2])(2)
 });

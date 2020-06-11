@@ -1,6 +1,6 @@
 {
   "name": "nameamparser",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Domain name parser.",
   "main": "index.js",
   "scripts": {
