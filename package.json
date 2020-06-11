@@ -11,14 +11,14 @@
   "license": "MIT",
   "keywords": [
     "domainparser",
-    "nameparser"
+    "nameamparser"
   ],
   "devDependencies": {
     "browserify": "^16.5.0"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:tigransimonyan/nameparser.git"
+    "url": "git@github.com:tigransimonyan/nameamparser.git"
   },
   "registry": "https://npm.pkg.github.com/tigransimonyan"
 }
