@@ -1,0 +1,22 @@
+{
+  "name": "nameparser",
+  "version": "1.0.0",
+  "description": "Domain name parser.",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify ./index.js --standalone=nameparser > ./dist/nameparser.js",
+    "fetch:list": "node ./tools/fetch-list.js"
+  },
+  "author": {
+    "name": "Tigran Simonyan",
+    "url": "https://name.am"
+  },
+  "license": "MIT",
+  "keywords": [
+    "domainparser",
+    "nameparser"
+  ],
+  "devDependencies": {
+    "browserify": "^16.5.0"
+  }
+}
