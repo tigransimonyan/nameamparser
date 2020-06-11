@@ -7,10 +7,7 @@
     "build": "browserify ./index.js --standalone=nameparser > ./dist/nameparser.js",
     "fetch:list": "node ./tools/fetch-list.js"
   },
-  "author": {
-    "name": "Tigran Simonyan",
-    "url": "https://name.am"
-  },
+  "author": "Tigran Simonyan",
   "license": "MIT",
   "keywords": [
     "domainparser",
@@ -18,5 +15,12 @@
   ],
   "devDependencies": {
     "browserify": "^16.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tigransimonyan/nameparser.git"
+  },
+  "publishConfig": {
+    "registry": "https://github.com/tigransimonyan/nameparser"
   }
 }
