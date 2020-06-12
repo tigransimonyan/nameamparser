@@ -14,13 +14,11 @@ npm install --save nameamparser
 
 ## API
 
-##### parse(domain)
-
 ```js
 const nmparser = require('nameamparser');
 ```
 
-
+##### parse(domain)
 
 ```js
 const parsed = nmparser.parse('https://wwW.name.AM');
