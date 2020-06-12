@@ -41,7 +41,7 @@ console.log(nmparser.includesTld('name.am', ['com', 'am'])); // true
 
 MIT License
 
-Copyright (c) [2020] [Tigran Simonyan]
+Copyright (c) 2020 Tigran Simonyan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
