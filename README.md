@@ -1,5 +1,6 @@
 # nameamparser
 
+JavaScript domain parser based on the [Public Suffix List](https://publicsuffix.org/).
 
 ## Installation
 
