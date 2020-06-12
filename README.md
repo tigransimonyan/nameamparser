@@ -1,6 +1,8 @@
 # nameamparser
 
-JavaScript domain parser based on the [Public Suffix List](https://publicsuffix.org/).
+JavaScript domain parser based on the [Public Suffix List](https://publicsuffix.org/). 
+
+[» Try on RunKit](https://npm.runkit.com/nameamparser)
 
 ## Installation
 
