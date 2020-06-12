@@ -9,7 +9,7 @@ Using npm:
 npm install --save nameamparser
 ```
 
-## nameamparser API
+## API
 
 ##### parse(domain)
 
