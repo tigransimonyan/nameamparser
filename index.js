@@ -85,7 +85,7 @@ function parse(input) {
 
 function includesTld(input, param) {
   if (typeof input !== 'string') {
-    return result;
+    return false;
   }
 
   var output = normalizeValue(input);
