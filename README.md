@@ -18,6 +18,11 @@ npm install --save nameamparser
 
 ```js
 const nmparser = require('nameamparser');
+```
+
+
+
+```js
 const parsed = nmparser.parse('https://wwW.name.AM');
 
 console.log(parsed.output); // 'www.name.am'
@@ -25,6 +30,17 @@ console.log(parsed.tld); // 'am'
 console.log(parsed.sld); // 'name'
 console.log(parsed.domain); // 'name.am'
 console.log(parsed.subdomain); // 'www'
+
+```
+
+```js
+const parsed = nmparser.parse('.test.3.null');
+
+console.log(parsed.output); // 'test.3.null'
+console.log(parsed.tld); // ''
+console.log(parsed.sld); // 'test3null'
+console.log(parsed.domain); // ''
+console.log(parsed.subdomain); // ''
 
 ```
 
