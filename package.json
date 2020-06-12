@@ -1,11 +1,12 @@
 {
   "name": "nameamparser",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Domain name parser.",
   "main": "index.js",
   "scripts": {
     "build": "browserify ./index.js --standalone=nameamparser > ./dist/nameamparser.js",
-    "fetch:list": "node ./tools/fetch-list.js"
+    "fetch:list": "node ./tools/fetch-list.js",
+    "test": "node ./tests/index.js"
   },
   "author": "Tigran Simonyan",
   "license": "MIT",

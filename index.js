@@ -4,7 +4,7 @@ var suffixes = require('./data/suffix.json');
 
 function normalizeValue(str) {
   return str
-    .replace(/.+\/\/|\/.+|\s/g, '')
+    .replace(/.+\/\/|\/.+|\s|\?/g, '')
     .replace(/․/g, '.')
     .replace(/^\.|\.$/g, '')
     .toLowerCase();
@@ -23,17 +23,18 @@ function getTld(str) {
   return '';
 }
 
-function getSld(domain) {
+function getSld(str, domain) {
+  var sld = str.replace(/\./g, '');
   var array = domain.split('.');
-  if (array.length === 0) {
-    return '';
+  if (domain === '' || array.length === 0) {
+    return sld;
   }
   return array.shift();
 }
 
 function getDomain(str, tld) {
   var array = str.match(new RegExp('[^.]+\\.'.concat(tld, '$')));
-  if (!array || array.length === 0) {
+  if (!array || array.length === 0 || tld === '') {
     return '';
   }
   return array.shift();
@@ -77,7 +78,7 @@ function parse(input) {
   result.output = normalizeValue(result.input);
   result.tld = getTld(result.output);
   result.domain = getDomain(result.output, result.tld);
-  result.sld = getSld(result.domain);
+  result.sld = getSld(result.output, result.domain);
   result.subdomain = getSubdomain(result.output, result.domain);
 
   return result;
